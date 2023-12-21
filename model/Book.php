@@ -41,28 +41,28 @@ class Book
     public function searchAndDisplayBooks()
     {
         try {
-            // Connexion à la base de données
+           
             $pdo = connectToDatabase();
 
-            // Création d'une instance de la classe Book
+           
             $book = new Book($pdo);
 
             if (isset($_GET['title'])) {
-                // Si un titre est fourni dans la recherche
+                
                 $searchTitle = $_GET['title'];
                 $foundBook = $this->getBookByTitle($searchTitle);
 
                 if ($foundBook) {
-                    // Affichez les informations sur le livre recherché
+               
                     echo 'Titre : ' . $foundBook['title'] . '<br>';
                     echo 'Auteur : ' . $foundBook['author'] . '<br>';
                     echo 'Type : ' . $foundBook['types'] . '<br>';
-                    // Ajoutez d'autres propriétés au besoin
+                   
                 } else {
                     echo 'Livre non trouvé.';
                 }
             } else {
-                // Affichage de tous les livres
+                
                 $books = $this->getAllBooks();
 
                 if ($books) {

@@ -1,22 +1,3 @@
-<!-- view/roman.php -->
-<?php
-/*
-<h1>Livres de type "Roman"</h1>
-
-if (isset($romanBooks) && $romanBooks) {
-    foreach ($romanBooks as $b) {
-        echo 'Titre : ' . $b['title'] . '<br>';
-        echo 'Auteur : ' . $b['author'] . '<br>';
-        echo 'Type : ' . $b['types'] . '<br>';
-        // Ajoutez d'autres propriétés au besoin
-        echo '<hr>';
-    }
-} else {
-    echo 'Aucun livre trouvé.';
-}
-*/
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,27 +7,56 @@ if (isset($romanBooks) && $romanBooks) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Page Fantasy</title>
     <style>
-    
+        body {
+            background-color: #f5f5f5; /* Couleur de fond neutre */
+            font-family: 'Arial', sans-serif; /* Police de caractères élégante */
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #ff8c66; /* Couleur de titre chaleureuse */
+        }
+
+        .card {
+            background-color: #ffffff; /* Fond de la carte */
+            border: 1px solid #e1e1e1; /* Bordure légère de la carte */
+            border-radius: 8px; /* Coins arrondis de la carte */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre de la carte */
+            margin-bottom: 20px;
+        }
+
+        .card-img-top {
+            border-top-left-radius: 8px; /* Coins arrondis en haut à gauche de l'image */
+            border-top-right-radius: 8px; /* Coins arrondis en haut à droite de l'image */
+            height: 200px; /* Ajustez la hauteur selon vos besoins */
+            object-fit: cover; /* Assure que l'image couvre complètement le conteneur */
+        }
+
+        .card-title {
+            color: #ff8c66; /* Couleur du titre de la carte */
+        }
+
+        .card-text {
+            color: #666666; /* Couleur de texte grise pour le texte de la carte */
+        }
     </style>
 </head>
 <body>
 
 <?php
 
-
-include 'search.php'; 
+include 'search.php';
 
 function afficherLivresFantasyFromDatabase()
 {
-
     $pdo = connectToDatabase();
-
-  
     $sql = "SELECT * FROM books WHERE types = 'Fantasy'";
     
     try {
         $stmt = $pdo->query($sql);
-
         $livresFantasy = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         if ($livresFantasy) {
@@ -68,7 +78,6 @@ function afficherLivresFantasyFromDatabase()
             }
             echo '  </div>';
             echo '</div>';
-        
         } else {
             echo 'Aucun livre de type "Fantasy" trouvé.';
         }
@@ -79,5 +88,8 @@ function afficherLivresFantasyFromDatabase()
 
 // Appel de la fonction pour afficher les livres de type "Fantasy" depuis la base de données
 afficherLivresFantasyFromDatabase();
+?>
 
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-eaFVdiwyHlI0o8aT6XtCkXPEx3M3U5P4b7ckPxP6QFfT5EBVljjdQPO8Lr+3Zkp7" crossorigin="anonymous"></script>
+</body>
+</html>

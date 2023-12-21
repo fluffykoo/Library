@@ -1,18 +1,19 @@
 <?php
-// controller/process-registration.php
+
 
 try {
-    // Connexion à la base de données
-    $dsn = 'mysql:host=127.0.0.1;dbname=pdoOumou;charset=utf8mb4;port=8889';
-    $username = 'root';
-    $password = 'root';
+   
+    $dsn = 'mysql:host=51.158.59.186;dbname=oc;charset=utf8mb4;port=14301';
+    $username = 'phppex';
+    $password = 'Supermotdepasse!42';
+
     $pdo = new PDO($dsn, $username, $password);
 
-    // Récupérez les données du formulaire
+
     $newUsername = isset($_POST['newUsername']) ? htmlspecialchars($_POST['newUsername']) : null;
     $newPassword = isset($_POST['newPassword']) ? htmlspecialchars($_POST['newPassword']) : null;
 
-    // Utilisation de la requête préparée pour l'opération CREATE
+   
     $insertQuery = "INSERT INTO users (username, password) VALUES (?, ?)";
     $stmt = $pdo->prepare($insertQuery);
     $stmt->execute([$newUsername, $newPassword]);

@@ -7,7 +7,41 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Page Romance</title>
     <style>
-        /* Ajoutez ici vos styles spécifiques si nécessaire */
+        body {
+            background-color: #f5f5f5; /* Couleur de fond neutre */
+            font-family: 'Arial', sans-serif; /* Police de caractères élégante */
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #ff8c66; /* Couleur de titre chaleureuse */
+        }
+
+        .card {
+            background-color: #ffffff; /* Fond de la carte */
+            border: 1px solid #e1e1e1; /* Bordure légère de la carte */
+            border-radius: 8px; /* Coins arrondis de la carte */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre de la carte */
+            margin-bottom: 20px;
+        }
+
+        .card-img-top {
+            border-top-left-radius: 8px; /* Coins arrondis en haut à gauche de l'image */
+            border-top-right-radius: 8px; /* Coins arrondis en haut à droite de l'image */
+            height: 200px; /* Ajustez la hauteur selon vos besoins */
+            object-fit: cover; /* Assure que l'image couvre complètement le conteneur */
+        }
+
+        .card-title {
+            color: #ff8c66; /* Couleur du titre de la carte */
+        }
+
+        .card-text {
+            color: #666666; /* Couleur de texte grise pour le texte de la carte */
+        }
     </style>
 </head>
 <body>
@@ -16,17 +50,13 @@
 
 include 'search.php';
 
-
 function afficherLivresRomanceFromDatabase()
 {
- 
     $pdo = connectToDatabase();
-
     $sql = "SELECT * FROM books WHERE types = 'Romance'";
     
     try {
         $stmt = $pdo->query($sql);
-
         $livresRomance = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         if ($livresRomance) {
@@ -56,7 +86,6 @@ function afficherLivresRomanceFromDatabase()
     }
 }
 
-// Appel de la fonction pour afficher les livres de type "Romance" depuis la base de données
 afficherLivresRomanceFromDatabase();
 ?>
 

@@ -11,7 +11,7 @@
     <div class="container mt-5">
         <h2>Informations de l'Utilisateur</h2>
         <?php
-        // Afficher les informations de l'utilisateur
+        
         if (isset($_GET["username"])) {
             $username = htmlspecialchars($_GET["username"]);
             echo "<p>Nom d'utilisateur : $username</p>";

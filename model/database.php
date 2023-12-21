@@ -3,9 +3,9 @@
 
 
 function connectToDatabase() {
-    $dsn = 'mysql:host=127.0.0.1;dbname=pdoOumou;charset=utf8mb4;port=8889';
-    $username = 'root';
-    $password = 'root';
+    $dsn = 'mysql:host=51.158.59.186;dbname=oc;charset=utf8mb4;port=14301';
+    $username = 'phppex';
+    $password = 'Supermotdepasse!42';
 
     try {
         $pdo = new PDO($dsn, $username, $password);

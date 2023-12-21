@@ -36,16 +36,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?page=login">Connexion</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?page=emprunter">Emprunt/Retour</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <main>
-    <!-- Le reste de votre contenu HTML -->
+    
     </main>
 
-    <!-- Ajoutez le script Bootstrap JS si nécessaire -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
